@@ -7,6 +7,38 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+  <ion-img [src]="car.image"></ion-img>
+
+
+  <ion-list>
+    <ion-item>
+       
+      <ion-label>
+        <ion-icon name="car"></ion-icon>
+        name : {{car.name}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+          type : {{car.type}}
+        </ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label>
+            model : {{car.model}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+              price : {{car.price}}
+            </ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                color : {{car.color}}
+              </ion-label>
+            </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { car } from '../../models/cars';
 import { Router } from '@angular/router';
+import { RoutingParamService } from '../routing-param.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -43,11 +44,12 @@ export class HomePage {
     // https://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/2018/05/_86a0671.jpg
     
   ]
-  constructor(private router: Router) {}
+  constructor(private router: Router, public param: RoutingParamService) {}
 
 
   goToDetail(item){
     console.log(item);
+    this.param.setItem(item);
     this.router.navigate(['/detail']);
   }
 
