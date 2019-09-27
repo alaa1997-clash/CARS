@@ -1,0 +1,7 @@
+{
+  "appId": "com.proximaDev.app",
+  "appName": "car",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class RoutingParamService {
   item:any;
-  constructor() { }
+  
 
   public setItem(objectVal){
     this.item = objectVal;

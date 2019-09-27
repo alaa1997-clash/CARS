@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content >
-  <ion-img [src]="car.image"></ion-img>
+  <ion-img [src]="car?.fields.image.fields.file.url"></ion-img>
 
 
   <ion-list>
@@ -16,29 +16,32 @@
        
       <ion-label>
         <ion-icon name="car"></ion-icon>
-        name : {{car.name}}
+        name : {{car?.fields.title}}
       </ion-label>
     </ion-item>
     <ion-item>
         <ion-label>
-          type : {{car.type}}
+          type : {{car.fields.type}}
         </ion-label>
       </ion-item>
       <ion-item>
           <ion-label>
-            model : {{car.model}}
+            model : {{car.fields.model}}
           </ion-label>
         </ion-item>
         <ion-item>
             <ion-label>
-              price : {{car.price}}
+              price : {{car.fields.price}}
             </ion-label>
           </ion-item>
           <ion-item>
               <ion-label>
-                color : {{car.color}}
+                color : {{car.fields.color}}
               </ion-label>
             </ion-item>
   </ion-list>
+  <div class="ion-padding">
+      <ion-button expand="block" (click)="gettype(car?.fields.type)">get all equal types</ion-button>
+  </div>
 
 </ion-content>

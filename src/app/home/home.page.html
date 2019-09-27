@@ -9,32 +9,31 @@
 <ion-content class="ion-padding">
   <ion-card text-center>
     <ion-card-header>
-      <!-- <h1> {{cars[0].name}}</h1> -->
       <ion-card-title>
-          {{cars[0].name}}
+          {{cars[0]?.fields.title}}
       </ion-card-title>
       <ion-card-subtitle>
-          {{cars[0].type}} |  {{cars[0].price | currency}} | {{cars[0].model}} | {{cars[0].color}}
+          {{cars[0]?.fields.type}} |  {{cars[0]?.fields.price | currency}} | {{cars[0]?.fields.model}} | {{cars[0]?.fields.color}}
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-img [src]="cars[0].image"></ion-img><br>
+      <ion-img [src]="cars[0]?.fields.image.fields.file.url"></ion-img><br>
       <ion-button expand="block" (click)="goToDetail(cars[0])"> detail </ion-button>
     </ion-card-content>
   </ion-card>
   <ion-list >
-    <ion-item *ngFor="let item of cars" detail (click)="goToDetail(item)">
+    <ion-item *ngFor="let item of cars" detail (click)="goToDetail(item)" >
         
-      <ion-thumbnail >
-        <ion-img [src]="item.image"></ion-img>
+      <ion-thumbnail>
+        <ion-img [src]="item?.fields.image.fields.file.url"></ion-img>
       </ion-thumbnail>
      
       <ion-label style="margin-left: 20px">
-        <h2> {{item.name}}</h2>
-        <p>{{item.price | currency}}</p>
+        <h2> {{item.fields.title}}</h2>
+        <p>{{item.fields.price | currency}}</p>
       </ion-label>
      
     </ion-item>
     <br>
-  </ion-list>
+  </ion-list> 
 </ion-content>
